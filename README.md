@@ -123,22 +123,35 @@ Most important features:
 
 ---
 
-## System Architecture
+## System Pipeline
 
-Pipeline:
-Kepler + TESS Data
-↓
-Data Cleaning & Feature Engineering
-↓
-Model Training (RF / XGBoost / LightGBM)
-↓
-Model Serialization (Joblib)
-↓
-Django Backend API
-↓
-React Frontend Dashboard
-↓
-User Uploads Dataset → Predictions
+1. **Data Collection**
+   - Kepler Mission Dataset
+   - TESS Mission Dataset
+
+2. **Data Processing**
+   - Data cleaning
+   - Feature engineering
+   - Feature harmonization across missions
+
+3. **Model Training**
+   - Random Forest
+   - XGBoost
+   - LightGBM
+
+4. **Model Serialization**
+   - Saved using `joblib`
+
+5. **Backend API**
+   - Django REST API for model inference
+
+6. **Frontend Interface**
+   - React + TypeScript dashboard
+
+7. **User Workflow**
+   - Upload CSV dataset
+   - Run predictions
+   - View visualization and confidence scores
 
 ---
 
